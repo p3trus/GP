@@ -21,6 +21,7 @@
 #include "GP/BasicPlot.hpp"
 #include "GP/Binary.hpp"
 #include "GP/Clear.hpp"
+#include "GP/Config.hpp"
 #include "GP/DataPlot.hpp"
 #include "GP/Endian.hpp"
 #include "GP/Exit.hpp"

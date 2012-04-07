@@ -17,7 +17,7 @@
 #ifndef GP_DATAPLOT_HPP_
 #define GP_DATAPLOT_HPP_
 
-#include "Compatibility.hpp"
+#include "Config.hpp"
 
 #include "BasicPlot.hpp"
 #include "Binary.hpp"
