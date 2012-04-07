@@ -43,7 +43,7 @@ void example2()
 void example3()
 {
     Gnuplot plt;
-    plt << plot("../example/sine.bin").binary().title("example 3").format("%double").array(201) << std::endl; 
+    plt << plot("../example/sample.bin").binary().title("example 3").array(100) << std::endl; 
 }
 
 void example4()
