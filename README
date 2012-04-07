@@ -1,0 +1,11 @@
+
+Documentation
+-------------
+GP uses doxygen for code documentation. It provides a cmake doxygen target. To
+generate the documentation do the following.
+In the GP root directory:
+  o mkdir bin
+  o cd bin
+  o cmake ..
+  o make doc
+This creates a doc/ directory inside the GP root directory.
