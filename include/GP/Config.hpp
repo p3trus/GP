@@ -17,6 +17,15 @@
 #ifndef GP_COMPATIBILITY_HPP_
 #define GP_COMPATIBILITY_HPP_
 
+/**
+ * \def GP_VERSION
+ * Describes the version number. The XXYYZZ format is used, that means 
+ * the major version is (GP_VERSION / 100000), the minor version is
+ * ((GP_VERSION / 100) % 1000), and the sub minor version is 
+ * (GP_VERSION % 100).
+ */
+#define GP_VERSION 001000
+
 #ifndef GP_GNUPLOT_VERSION
     #define GP_GNUPLOT_VERSION 4600 // Gnuplot version * 1000
 #endif
