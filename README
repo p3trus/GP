@@ -9,7 +9,8 @@ gnuplot from within C++ code.
 Version
 -------
 
-This directory contains the 0.1 release of GP.
+This directory contains the 0.1 release of GP. The latest version can be found 
+on the GP project page under https://github.com/p3trus/GP.
 
 Licensing
 ---------
