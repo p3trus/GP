@@ -10,3 +10,5 @@ add_executable( example example/example.cpp )
 target_link_libraries( example boost_filesystem boost_iostreams )
 
 add_definitions(-DGP_GNUPLOT_VERSION=4200) #use gnuplot version 4.2 compatibility mode
+
+add_subdirectory( dox )
