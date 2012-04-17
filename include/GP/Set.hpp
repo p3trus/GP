@@ -17,10 +17,53 @@
 #ifndef GP_SET_HPP_
 #define GP_SET_HPP_
 
-#include "Enum.hpp"
 #include "detail/Set.hpp"
 
 namespace GP {
+
+/**
+  * \brief Change the angular unit to \a x.
+  */
+inline detail::Angles set_angles( Angles x )
+{
+    return detail::Angles(x);
+}
+
+/**
+  * \brief Display the current angles setting.
+  */
+inline std::ostream& show_angles( std::ostream& o )
+{
+    return o << " show angles\n";
+}
+
+/**
+  * \brief Closes any output file, previously opened and redirects the output
+  * to STDOUT.
+  *
+  * \note If both set_terminal and set_output are used, it is prefered to use
+  * set_terminal first.
+  */
+inline detail::Output set_output()
+{
+    return detail::Output();
+}
+
+/**
+  * \brief Displays the current output
+  */
+inline std::ostream& show_output( std::ostream& o )
+{
+    return o << " show output\n";
+}
+
+/**
+  * \brief Redirects the output to the file in \a path.
+  */
+inline detail::Output set_output( std::string path )
+{
+    return detail::Output( path );
+}
 
 /**
   * \brief show all available terminal types.
@@ -41,9 +84,9 @@ inline detail::Terminal set_terminal( Terminal x )
 /**
   * \brief Display the current terminal.
   */
-inline std::ostream& show_terminal( std::ostream& out )
+inline std::ostream& show_terminal( std::ostream& o )
 {
-    return out << "show terminal\n";
+    return o << "show terminal\n";
 }
 
 } // GP

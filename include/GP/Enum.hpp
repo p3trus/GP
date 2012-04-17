@@ -102,6 +102,11 @@ inline std::ostream& operator<<(std::ostream& o, name x )       \
 namespace GP {
 
 /**
+  * \enum Angles
+  */
+GP_ENUM( Angles, (degrees,radians))
+
+/**
   * \enum Axes
   */
 GP_ENUM( Axes, (x1y1,x1y2,x2y1,x2y2) )
