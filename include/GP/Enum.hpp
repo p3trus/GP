@@ -172,6 +172,60 @@ GP_ENUM( FillableStyle,
              pm3d
          )
        )
+GP_ENUM( Terminal,
+         (
+             push,
+             pop,
+             canvas,         //HTML Canvas object
+             cgm,            //Computer Graphics Metafile
+             corel,          //EPS format for CorelDRAW
+             dpu414,         //Seiko DPU-414 thermal printer [small medium large]
+             dumb,           //ascii art for anything that prints text
+             dxf,            //dxf-file for AutoCad (default size 120x80)
+             eepic,          //EEPIC -- extended LaTeX picture environment
+             emf,            //Enhanced Metafile format
+             emtex,          //LaTeX picture environment with emTeX specials
+             epslatex,       //LaTeX picture environment using graphicx package
+             epson_180dpi,   //Epson LQ-style 180-dot per inch (24 pin) printers
+             epson_60dpi,    //Epson-style 60-dot per inch printers
+             epson_lx800,    //Epson LX-800, Star NL-10, NX-1000, PROPRINTER ...
+             fig,            //FIG graphics language for XFIG graphics editor
+             gif,            //GIF images using libgd and TrueType fonts
+             hp2623A,        //HP2623A and maybe others
+             hp2648,         //HP2648 and HP2647
+             hp500c,         //HP DeskJet 500c, [75 100 150 300] [rle tiff]
+             hpdj,           //HP DeskJet 500, [75 100 150 300]
+             hpgl,           //HP7475 and relatives [number of pens] [eject]
+             hpljii,         //HP Laserjet series II, [75 100 150 300]
+             hppj,           //HP PaintJet and HP3630 [FNT5X9 FNT9X17 FNT13X25]
+             imagen,         //Imagen laser printer
+             jpeg,           //JPEG images using libgd and TrueType fonts
+             latex,          //LaTeX picture environment
+             mf,             //Metafont plotting standard
+             mif,            //Frame maker MIF 3.00 format
+             mp,             //MetaPost plotting standard
+             nec_cp6,        //NEC printer CP6, Epson LQ-800 [monocrome color draft]
+             okidata,        //OKIDATA 320/321 Standard
+             pbm,            //Portable bitmap [small medium large] [monochrome gray color]
+             pcl5,           //HP Designjet 750C, HP Laserjet III/IV, etc. (many options)
+             png,            //PNG images using libgd and TrueType fonts
+             postscript,     //PostScript graphics, including EPSF embedded files (*.eps)
+             pslatex,        //LaTeX picture environment with PostScript \specials
+             pstex,          //plain TeX with PostScript \specials
+             pstricks,       //LaTeX picture environment with PSTricks macros
+             qms,            //QMS/QUIC Laser printer (also Talaris 1200 and others)
+             starc,          //Star Color Printer
+             svg,            //W3C Scalable Vector Graphics driver
+             tandy_60dpi,    //Tandy DMP-130 series 60-dot per inch graphics
+             texdraw,        //LaTeX texdraw environment
+             tgif,           //TGIF X11 [mode] [x,y] [dashed] ["font" [fontsize]]
+             tkcanvas,       //Tk/Tcl canvas widget [perltk] [interactive]
+             tpic,           //TPIC -- LaTeX picture environment with tpic \specials
+             unknown,        //Unknown terminal type - not a plotting device
+             windows         //Microsoft Windows
+         )
+       )
+
 } // GP
 
 #endif // GP_ENUM_HPP_
