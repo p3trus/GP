@@ -18,6 +18,8 @@
 #define GP_ENUM_HPP_
 
 #include <boost/preprocessor.hpp>
+#include <iostream>
+#include <stdexcept>
 
 /**
   * \brief Creates an enum named \a name with \a enum_tuple enumerators.
@@ -97,9 +99,79 @@ inline std::ostream& operator<<(std::ostream& o, name x )       \
     GP_ENUM_DEF( name, enum_tuple )                             \
     GP_ENUM_STREAM( name, enum_tuple )
 
-
 namespace GP {
 
+/**
+  * \enum Axes
+  */
+GP_ENUM( Axes, (x1y1,x1y2,x2y1,x2y2) )
+
+/**
+  * \enum Endian
+  */
+GP_ENUM( Endian, (little,big,swap) )
+
+/**
+  * \enum Smooth
+  */
+GP_ENUM( Smooth,
+         (
+             unique,
+             frequency,
+             cumulative,
+             kdensity,
+             csplines,
+             acsplines,
+             bezier,
+             sbezier
+         )
+       )
+
+/**
+  * \enum Style
+  */
+GP_ENUM( Style,
+         (
+             lines,
+             dots,
+             steps,
+             errorbars,
+             xerrorbar,
+             xyerrorlines,
+             points,
+             impulses,
+             fsteps,
+             errorlines,
+             xerrorlines,
+             yerrorbars,
+             linespoints,
+             labels,
+             histeps,
+             financebars,
+             xyerrorbars,
+             yerrorlines,
+             vectors
+         )
+       )
+
+/**
+  * \enum FillableStyle
+  */
+GP_ENUM( FillableStyle,
+         (
+             boxes,
+             candlesticks,
+             image,
+             circles,
+             boxerrorbars,
+             filledcurves,
+             rgbimage,
+             boxxyerrorbars,
+             histograms,
+             rgbalpha,
+             pm3d
+         )
+       )
 } // GP
 
 #endif // GP_ENUM_HPP_
