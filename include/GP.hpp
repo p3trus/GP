@@ -26,7 +26,6 @@
 #include "GP/Format.hpp"
 #include "GP/FunctionPlot.hpp"
 #include "GP/History.hpp"
-#include "GP/Smooth.hpp"
 #include "GP/Stream.hpp"
 
 #endif // GP_
