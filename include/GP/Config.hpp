@@ -30,4 +30,9 @@
     #define GP_GNUPLOT_VERSION 4600 // Gnuplot version * 1000
 #endif
 
+namespace GP {
+
+
+}
+
 #endif // GP_COMPATIBILITY_HPP_
