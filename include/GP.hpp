@@ -17,20 +17,15 @@
 #ifndef GP_
 #define GP_
 
-#include "GP/Axes.hpp"
 #include "GP/BasicPlot.hpp"
 #include "GP/Binary.hpp"
 #include "GP/Clear.hpp"
 #include "GP/Config.hpp"
 #include "GP/DataPlot.hpp"
-#include "GP/Endian.hpp"
 #include "GP/Exit.hpp"
 #include "GP/Format.hpp"
 #include "GP/FunctionPlot.hpp"
 #include "GP/History.hpp"
-#include "GP/Smooth.hpp"
 #include "GP/Stream.hpp"
-#include "GP/Style.hpp"
-#include "GP/Terminal.hpp"
 
 #endif // GP_

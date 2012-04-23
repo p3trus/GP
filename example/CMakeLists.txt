@@ -14,10 +14,15 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
+# Add a target to compile example code.
+set(Boost_ADDITIONAL_VERSIONS "1.49" "1.49.0")
+set(Boost_USE_STATIC_LIBS        ON)
+set(Boost_USE_MULTITHREADED      ON)
+set(Boost_USE_STATIC_RUNTIME    OFF)
+find_package( Boost 1.49.0 COMPONENTS iostreams filesystem REQUIRED )
 
-project( GP )
-
-INCLUDE_DIRECTORIES( include )
-add_subdirectory( dox )
-add_subdirectory( example )
+if(Boost_FOUND)
+   include_directories(${Boost_INCLUDE_DIRS})
+   add_executable( example example.cpp )
+   target_link_libraries(example ${Boost_LIBRARIES})
+endif()

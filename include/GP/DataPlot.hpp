@@ -21,9 +21,7 @@
 
 #include "BasicPlot.hpp"
 #include "Binary.hpp"
-#include "Endian.hpp"
 #include "Format.hpp"
-#include "Smooth.hpp"
 #include <iterator>
 #include <vector>
 

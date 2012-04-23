@@ -17,8 +17,7 @@
 #ifndef GP_BASICPLOT_HPP_
 #define GP_BASICPLOT_HPP_
 
-#include "Axes.hpp"
-#include "Style.hpp"
+#include "Enum.hpp"
 #include <boost/optional.hpp>
 #include <iosfwd>
 #include <string>
