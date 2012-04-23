@@ -19,7 +19,6 @@
 
 #include <boost/preprocessor.hpp>
 #include <iostream>
-#include <stdexcept>
 
 /**
   * \brief Creates an enum named \a name with \a enum_seq enumerators.
@@ -37,10 +36,10 @@
   * \endcode
   * \sa GP_ENUM
   */
-#define GP_ENUM_DEF( name, enum_seq )                         \
+#define GP_ENUM_DEF( name, enum_seq )                           \
 enum name                                                       \
 {                                                               \
-    BOOST_PP_SEQ_ENUM( enum_seq )                           \
+    BOOST_PP_SEQ_ENUM( enum_seq )                               \
 };
 
 /**
@@ -54,7 +53,7 @@ case( enumerator ):return o << BOOST_PP_STRINGIZE( enumerator );
   * \brief helper macro used in GP_ENUM_STREAM.
   * \sa GP_ENUM_STREAM,GP_ENUM
   */
-#define GP_ENUM_DETAIL_CASES( enum_seq )                      \
+#define GP_ENUM_DETAIL_CASES( enum_seq )                        \
     BOOST_PP_SEQ_FOR_EACH(                                      \
         GP_ENUM_DETAIL_CASE,                                    \
         _,                                                      \
@@ -74,19 +73,17 @@ case( enumerator ):return o << BOOST_PP_STRINGIZE( enumerator );
   *     {
   *         case( first ):  return o << "first";
   *         case( second ): return o << "second";
-  *         default:    throw std::runtime_error("invalid enum");
   *     }
   * }
   * \endcode
   * \sa GP_ENUM
   */
-#define GP_ENUM_STREAM( name, enum_seq )                      \
+#define GP_ENUM_STREAM( name, enum_seq )                        \
 inline std::ostream& operator<<(std::ostream& o, name x )       \
 {                                                               \
     switch( x )                                                 \
     {                                                           \
-        GP_ENUM_DETAIL_CASES( enum_seq )                      \
-        default:    throw std::runtime_error("invalid enum");   \
+        GP_ENUM_DETAIL_CASES( enum_seq )                        \
     }                                                           \
 }
 
@@ -95,8 +92,8 @@ inline std::ostream& operator<<(std::ostream& o, name x )       \
   * enumerators and std::ostream& insertion operator.
   * \sa GP_ENUM_DEF,GP_ENUM_STREAM
   */
-#define GP_ENUM( name, enum_seq )                             \
-    GP_ENUM_DEF( name, enum_seq )                             \
+#define GP_ENUM( name, enum_seq )                               \
+    GP_ENUM_DEF( name, enum_seq )                               \
     GP_ENUM_STREAM( name, enum_seq )
 
 namespace GP {
