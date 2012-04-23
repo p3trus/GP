@@ -50,6 +50,8 @@ namespace GP {
  * 	<< "plot f(x)" << std::endl;
  * \endcode
  *
+ * \note OStreamPipe is not compatible with boost versions < 1.44.0.
+ * \todo add support for MSVC compiler.( replace popen, fileno  with _popen, _fileno,...)
  */
 class OStreamPipe
     : private boost::base_from_member<FILE *>,
@@ -65,7 +67,7 @@ public:
 
     explicit OStreamPipe( const char* cmd )
         : pipe_base(popen(cmd, "w")),
-          stream_base( fileno(this->pipe_base::member), 0)
+          stream_base( fileno(this->pipe_base::member), boost::iostreams::never_close_handle)
     {
         if (!this->pipe_base::member)
             throw std::runtime_error(strerror(errno));
@@ -80,11 +82,27 @@ public:
     }
 };
 
+/**
+  * \brief Gnuplot is a small wrapper around a posix pipe to a gnuplot
+  * instance.
+  *
+  * Gnuplot is a small wrapper around a posix pipe to a gnuplot instance.
+  *
+  * \note If you want to specify the location of the gnuplot binary or execute
+  * it with different command line arguments, use OStreamPipe instead.
+  *
+  * \note The behaviour of the persistent mode (--persist) in windows differs
+  * from the *nix behaviour. Since Windows has no \c fork() function, the
+  * plotting windows are closed immediately after the destruction of the
+  * Gnuplot instance. A solution to that is to use OStreamPipe to call
+  * \a pgnuplot.exe instead.
+  *
+  */
 class Gnuplot: public OStreamPipe
 {
 public:
     inline Gnuplot( bool persist=true )
-        : OStreamPipe( persist ? "gnuplot -persist" : "gnuplot" )
+        : OStreamPipe( persist ? "gnuplot -p" : "gnuplot" )
     {
 
     }
