@@ -90,4 +90,4 @@ inline std::ostream& show_terminal( std::ostream& o )
 }
 
 } // GP
-#endif GP_SET_HPP_
+#endif // GP_SET_HPP_

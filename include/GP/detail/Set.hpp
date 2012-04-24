@@ -14,8 +14,8 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef GP_SET_HPP_
-#define GP_SET_HPP_
+#ifndef GP_DETAIL_SET_HPP_
+#define GP_DETAIL_SET_HPP_
 
 #include "../Enum.hpp"
 #include <string>
@@ -30,9 +30,9 @@ struct Angles
     Angles( GP::Angles x ): angles(x) {}
 };
 
-std::ostream& operator <<(std::ostream& o, Angles x)
+inline std::ostream& operator <<(std::ostream& o, detail::Angles x)
 {
-    return " set angles " << x->angles << "\n";
+    return o << " set angles " << x.angles << "\n";
 }
 
 struct Output
@@ -42,14 +42,14 @@ struct Output
     Output( std::string x ): path(x){}
 };
 
-std::ostream& operator << ( std::ostream& o, Output x )
+std::ostream& operator << ( std::ostream& o, detail::Output x )
 {
     o << " set output";
     if( x.path )
     {
-        if( x->path.empty() )
+        if( x.path->empty() )
             throw std::runtime_error("empty path string in set_output");
-        o << " " << x->path;
+        o << " " << *x.path;
     }
     return o << "\n";
 }
@@ -66,10 +66,10 @@ inline std::ostream& operator<<( std::ostream& o, Terminal x )
 {
     o << " set terminal";
     if( x.terminal )
-        o << " " << x->terminal;
+        o << " " << *x.terminal;
     return o << "\n";
 }
 
 } // detail
 } // GP
-#endif GP_SET_HPP_
+#endif // GP_DETAIL_SET_HPP_

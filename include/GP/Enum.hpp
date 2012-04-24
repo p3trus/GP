@@ -79,7 +79,7 @@ case( enumerator ):return o << BOOST_PP_STRINGIZE( enumerator );
   * \sa GP_ENUM
   */
 #define GP_ENUM_STREAM( name, enum_seq )                        \
-inline std::ostream& operator<<(std::ostream& o, name x )       \
+inline std::ostream& operator<<(std::ostream& o, GP::name x )       \
 {                                                               \
     switch( x )                                                 \
     {                                                           \
@@ -101,7 +101,7 @@ namespace GP {
 /**
   * \enum Angles
   */
-GP_ENUM( Angles, (degrees)(radians))
+GP_ENUM( Angles, (degrees)(radians) )
 
 /**
   * \enum Axes
